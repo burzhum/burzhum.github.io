@@ -1,0 +1,42 @@
+@import '@fontsource/archivo/500.css';
+@import '@fontsource/archivo/700.css';
+@import '@fontsource/archivo/900.css';
+@import '@fontsource/jetbrains-mono/400.css';
+@import '@fontsource/jetbrains-mono/700.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root, :root[data-theme='night'] {
+  --bg: #0a0e14; --ink: #e6edf3; --muted: #8b949e;
+  --accent: #23d18b; --accent2: #39c5cf;
+  --card: #11161f; --line: #30363d;
+  --grid: rgba(35, 209, 139, 0.05);
+}
+:root[data-theme='day'] {
+  --bg: #f4f1ea; --ink: #1a1a1a; --muted: #787878;
+  --accent: #ff4d00; --accent2: #b33900;
+  --card: #fffdf7; --line: #1a1a1a;
+  --grid: rgba(26, 26, 26, 0.05);
+}
+
+html { scroll-behavior: smooth; }
+body { @apply bg-bg text-ink font-display antialiased; transition: background-color .4s, color .4s; }
+
+.grid-bg {
+  background-image: linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+@keyframes blink { 50% { opacity: 0; } }
+.cursor-blink { animation: blink 1s steps(1) infinite; }
+
+@keyframes marquee { to { transform: translateX(-50%); } }
+.marquee-track { animation: marquee 18s linear infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .cursor-blink, .marquee-track { animation: none; }
+}
