@@ -1,0 +1,93 @@
+export const projects = {
+  publicTrack: [
+    {
+      name: 'GrottoMud — “Alternate Reality”',
+      tag: 'LIVE · C · 64-BIT PORT',
+      desc: 'The MUD I played in 1998, dead for two decades — revived. ~25 legacy bugs fixed in the C codebase, then a full 32→64-bit modernization with byte-identical world-file decoding. Running on a public VPS.',
+      stack: ['C', 'CircleMUD', 'systemd hardening', 'gdb'],
+      links: [
+        { label: 'play: telnet 103.233.0.154 4000', href: 'telnet://103.233.0.154:4000' },
+        { label: 'hiddengrotto.org', href: 'https://www.hiddengrotto.org' },
+      ],
+    },
+    {
+      name: 'Grotto Client',
+      tag: 'OPEN SOURCE · ELECTRON',
+      desc: 'Cross-platform desktop MUD client so friends can actually play. v0.1.0 shipped with Windows, macOS and Linux installers, CI-built.',
+      stack: ['Electron', 'xterm.js', 'esbuild', 'vitest'],
+      links: [{ label: 'github.com/burzhum/grotto-client', href: 'https://github.com/burzhum/grotto-client' }],
+    },
+    {
+      name: 'hiddengrotto.org',
+      tag: 'LIVE · STATIC',
+      desc: 'Marketing and lore site for the game — custom domain, TLS, linked from the in-game MOTD.',
+      stack: ['nginx', 'static HTML/CSS'],
+      links: [{ label: 'visit site', href: 'https://www.hiddengrotto.org' }],
+    },
+  ],
+  enterpriseTrack: [
+    {
+      name: 'Device Maintenance Platform',
+      problem: 'Preventive maintenance for 1,800+ endpoints tracked in spreadsheets; no proof of work, no schedule discipline.',
+      solution: 'Full workflow app: schedules, technician job queues, digital signatures with stamps, bulk PDF reports, WhatsApp digests to leads.',
+      stack: ['React', 'Express', 'PostgreSQL'],
+      impact: 'Every maintenance visit is now signed, photographed and reportable in one click.',
+    },
+    {
+      name: 'IT Team Task Manager',
+      problem: 'A multi-zone technical team ran on chat messages and memory.',
+      solution: 'Role- and zone-aware task system with admin oversight, deadlines and daily WhatsApp summaries.',
+      stack: ['React', 'Express', 'PostgreSQL'],
+      impact: 'Nothing falls through: every task has an owner, a zone and a trail.',
+    },
+    {
+      name: 'IT Knowledge Base + Asset Register',
+      problem: 'Years of tribal knowledge locked in a legacy helpdesk and individual heads.',
+      solution: '2,400+ entry searchable knowledge base fused with a hardware asset register.',
+      stack: ['React', 'Express', 'PostgreSQL', 'pg_trgm'],
+      impact: 'New engineers find the fix before they find the person who knew it.',
+    },
+    {
+      name: 'Ops Monitoring + WhatsApp Alerting',
+      problem: 'A dozen internal apps, zero unified visibility, alerts nobody saw.',
+      solution: 'Central health dashboard plus a self-hosted WhatsApp gateway; every service pings, every failure pages.',
+      stack: ['Node', 'NestJS', 'whatsapp-web.js'],
+      impact: 'Failures announce themselves — before users do.',
+    },
+    {
+      name: 'Switch Port-Security Clearer',
+      problem: 'Port-security lockouts needed a CLI-fluent engineer every single time.',
+      solution: 'Web tool that telnets to access switches and clears violations safely, with audit log.',
+      stack: ['Node', 'Express', 'SQLite', 'telnet'],
+      impact: 'A 15-minute specialist task became a 15-second button.',
+    },
+    {
+      name: 'GPS-Geofenced Attendance',
+      problem: 'Field staff attendance was unverifiable.',
+      solution: 'Mobile-first check-in gated by GPS geofences per site, with admin dashboards.',
+      stack: ['React', 'PocketBase'],
+      impact: 'Presence is proven, not claimed.',
+    },
+    {
+      name: 'Quran Reading Tracker',
+      problem: 'A khatam programme tracked on paper: no progress view, no accountability.',
+      solution: 'Teacher/student app with juz progress rings, audio recitation uploads and review workflow, completion certificates rendered as video.',
+      stack: ['React', 'Framer Motion', 'Express', 'PostgreSQL', 'Remotion'],
+      impact: 'Teachers review recitations asynchronously; completions celebrate themselves.',
+    },
+    {
+      name: 'Village Community Platform',
+      problem: 'A kampung community coordinating across scattered chat groups.',
+      solution: 'Multi-tenant community platform: announcements, directories, events.',
+      stack: ['Express', 'PostgreSQL'],
+      impact: 'One place for the whole village.',
+    },
+    {
+      name: 'Uptime Sentinel',
+      problem: 'Even the monitoring needed monitoring.',
+      solution: 'Independent watchdog service with public status view and escalation rules.',
+      stack: ['Node', 'Express'],
+      impact: 'The watcher is watched.',
+    },
+  ],
+}
