@@ -1,7 +1,13 @@
+import { Routes, Route } from 'react-router-dom'
+import Home from './pages/Home'
+import Lab from './pages/Lab'
+
 export default function App() {
   return (
-    <main className="min-h-screen grid-bg">
-      <h1 className="font-display font-black uppercase text-4xl p-10">Asrul Hasni</h1>
-    </main>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/lab" element={<Lab />} />
+      <Route path="*" element={<Home />} />
+    </Routes>
   )
 }
