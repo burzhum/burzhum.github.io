@@ -2,11 +2,17 @@ import { motion, useReducedMotion } from 'framer-motion'
 import Section from './Section'
 import { projects } from '../data/projects'
 
+const spring = { type: 'spring', stiffness: 300, damping: 22 }
+
 const card = (reduced, i) => ({
   initial: reduced ? false : { opacity: 0, y: 24 },
   whileInView: { opacity: 1, y: 0 },
   viewport: { once: true, margin: '-30px' },
   transition: { delay: (i % 3) * 0.07, duration: 0.45 },
+  ...(reduced ? {} : {
+    whileHover: { y: -6, transition: spring },
+    whileTap: { scale: 0.985, transition: spring },
+  }),
 })
 
 function PublicCard({ p, i, reduced }) {

@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react'
-import { useReducedMotion } from 'framer-motion'
+import { motion, useReducedMotion } from 'framer-motion'
 import Section from './Section'
 import { incidents } from '../data/incidents'
+
+const spring = { type: 'spring', stiffness: 300, damping: 22 }
 
 const TILES = [
   { label: 'AVAILABILITY', base: 99.9, unit: '%', jitter: 0 },
@@ -12,7 +14,7 @@ const TILES = [
 
 const LEVEL_COLOR = { CRIT: 'text-red-400', WARN: 'text-yellow-400', OK: 'text-accent' }
 
-function Tile({ t, reduced }) {
+function Tile({ t, i, reduced }) {
   const [v, setV] = useState(t.base)
   useEffect(() => {
     if (reduced || !t.jitter) return
@@ -20,13 +22,20 @@ function Tile({ t, reduced }) {
     return () => clearInterval(id)
   }, [reduced, t])
   return (
-    <div className="border border-line bg-card p-4">
+    <motion.div
+      className="border border-line bg-card p-4 hover:border-accent transition-colors"
+      initial={reduced ? false : { opacity: 0, y: 16, scale: 0.97 }}
+      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+      viewport={{ once: true, margin: '-30px' }}
+      transition={{ delay: i * 0.08, ...spring }}
+      {...(reduced ? {} : { whileHover: { y: -4, transition: spring } })}
+    >
       <div className="flex items-center gap-2">
         <span className={`w-2 h-2 rounded-full bg-accent ${reduced ? '' : 'cursor-blink'}`} aria-hidden="true" />
         <span className="font-mono text-[10px] tracking-[0.2em] text-muted">{t.label}</span>
       </div>
       <p className="font-black text-3xl mt-2">{v}<span className="text-accent text-xl">{t.unit}</span></p>
-    </div>
+    </motion.div>
   )
 }
 
@@ -38,7 +47,7 @@ export default function Noc() {
         ⚠ ILLUSTRATIVE SAMPLE DATA — the incidents below, however, were real
       </p>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-        {TILES.map(t => <Tile key={t.label} t={t} reduced={reduced} />)}
+        {TILES.map((t, i) => <Tile key={t.label} t={t} i={i} reduced={reduced} />)}
       </div>
       <div className="border border-line bg-card mt-4 p-4 font-mono text-xs overflow-hidden">
         <p className="text-muted tracking-widest text-[10px] mb-3">$ tail -f /var/log/career/incidents.log</p>
