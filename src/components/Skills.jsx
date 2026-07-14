@@ -10,8 +10,8 @@ const groupVariants = {
 }
 
 const tagVariants = {
-  hidden: { opacity: 0, y: 8, scale: 0.85 },
-  visible: { opacity: 1, y: 0, scale: 1, transition: spring },
+  hidden: { opacity: 0, y: 8, scale: 0.85, rotateY: 90 },
+  visible: { opacity: 1, y: 0, scale: 1, rotateY: 0, transition: spring },
 }
 
 export default function Skills() {
@@ -33,7 +33,8 @@ export default function Skills() {
                 <motion.span
                   key={i}
                   variants={reduced ? undefined : tagVariants}
-                  {...(reduced ? {} : { whileHover: { scale: 1.08, y: -2, transition: spring } })}
+                  style={reduced ? undefined : { transformPerspective: 600 }}
+                  {...(reduced ? {} : { whileHover: { scale: 1.08, y: -2, rotateY: 8, transition: spring } })}
                   className="font-mono text-xs border border-line px-2.5 py-1 hover:border-accent hover:text-accent transition-colors cursor-default"
                 >
                   {i}

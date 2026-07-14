@@ -5,8 +5,9 @@ export default function Section({ id, title, children }) {
   return (
     <motion.section
       id={id}
-      initial={reduced ? false : { opacity: 0, y: 32 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      style={reduced ? undefined : { transformPerspective: 1200, transformOrigin: 'top center' }}
+      initial={reduced ? false : { opacity: 0, y: 32, rotateX: 10 }}
+      whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
       viewport={{ once: true, margin: '-60px' }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
     >
