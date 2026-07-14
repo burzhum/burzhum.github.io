@@ -18,8 +18,9 @@ export default function Experience() {
           {experience.map((job, i) => (
             <motion.li
               key={job.company}
-              initial={reduced ? false : { opacity: 0, x: -16 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              style={reduced ? undefined : { transformPerspective: 900, transformOrigin: 'left center' }}
+              initial={reduced ? false : { opacity: 0, x: -16, rotateY: i % 2 ? 12 : -12 }}
+              whileInView={{ opacity: 1, x: 0, rotateY: 0 }}
               viewport={{ once: true, margin: '-40px' }}
               transition={{ delay: i * 0.08, duration: 0.5 }}
               className="relative"

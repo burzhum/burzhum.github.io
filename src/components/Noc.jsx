@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { motion, useReducedMotion } from 'framer-motion'
 import Section from './Section'
+import Tilt3D from './Tilt3D'
 import { incidents } from '../data/incidents'
 
 const spring = { type: 'spring', stiffness: 300, damping: 22 }
@@ -23,9 +24,10 @@ function Tile({ t, i, reduced }) {
   }, [reduced, t])
   return (
     <motion.div
-      className="border border-line bg-card p-4 hover:border-accent transition-colors"
-      initial={reduced ? false : { opacity: 0, y: 16, scale: 0.97 }}
-      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+      className="h-full border border-line bg-card p-4 hover:border-accent transition-colors"
+      style={reduced ? undefined : { transformPerspective: 700, transformOrigin: 'bottom center' }}
+      initial={reduced ? false : { opacity: 0, y: 16, rotateX: 25, scale: 0.97 }}
+      whileInView={{ opacity: 1, y: 0, rotateX: 0, scale: 1 }}
       viewport={{ once: true, margin: '-30px' }}
       transition={{ delay: i * 0.08, ...spring }}
       {...(reduced ? {} : { whileHover: { y: -4, transition: spring } })}
@@ -47,7 +49,11 @@ export default function Noc() {
         ⚠ ILLUSTRATIVE SAMPLE DATA — the incidents below, however, were real
       </p>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-        {TILES.map((t, i) => <Tile key={t.label} t={t} i={i} reduced={reduced} />)}
+        {TILES.map((t, i) => (
+          <Tilt3D key={t.label} max={6} className="h-full">
+            <Tile t={t} i={i} reduced={reduced} />
+          </Tilt3D>
+        ))}
       </div>
       <div className="border border-line bg-card mt-4 p-4 font-mono text-xs overflow-hidden">
         <p className="text-muted tracking-widest text-[10px] mb-3">$ tail -f /var/log/career/incidents.log</p>

@@ -1,4 +1,5 @@
 import Section from './Section'
+import Tilt3D from './Tilt3D'
 import { profile } from '../data/profile'
 
 const headshots = import.meta.glob('../assets/headshot.jpg', { eager: true, import: 'default' })
@@ -22,10 +23,11 @@ export default function About() {
   return (
     <Section id="about" title="about">
       <div className="grid md:grid-cols-[180px_1fr] gap-10">
-        <div className="border border-line bg-card aspect-square flex items-center justify-center overflow-hidden">
-          {headshot
-            ? <img src={headshot} alt="Asrul Hasni" className="w-full h-full object-cover" />
-            : <pre className="font-mono text-accent text-[9px] leading-tight" aria-label="portrait placeholder">{`
+        <Tilt3D glare max={10}>
+          <div className="border border-line bg-card aspect-square flex items-center justify-center overflow-hidden">
+            {headshot
+              ? <img src={headshot} alt="Asrul Hasni" className="w-full h-full object-cover" />
+              : <pre className="font-mono text-accent text-[9px] leading-tight" aria-label="portrait placeholder">{`
  ┌────────────┐
  │  ▒▒▒▒▒▒▒▒  │
  │  ▒ o  o ▒  │
@@ -33,7 +35,8 @@ export default function About() {
  │   ▒▒▒▒▒▒   │
  │  [ASRUL]   │
  └────────────┘`}</pre>}
-        </div>
+          </div>
+        </Tilt3D>
         <div>
           <dl className="grid grid-cols-2 gap-x-8 gap-y-4">
             {FACTS.map(([k, v]) => (
