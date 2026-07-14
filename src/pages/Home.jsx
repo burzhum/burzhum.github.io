@@ -9,10 +9,12 @@ import Noc from '../components/Noc'
 import Skills from '../components/Skills'
 import Contact from '../components/Contact'
 import Terminal from '../components/Terminal'
+import MatrixRain from '../components/MatrixRain'
 
 export default function Home() {
   return (
     <div className="min-h-screen grid-bg">
+      <MatrixRain />
       <BootLoader />
       <Nav />
       <main className="max-w-5xl mx-auto px-5 pt-24 space-y-32 overflow-x-hidden">
