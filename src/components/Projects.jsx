@@ -26,10 +26,14 @@ function PublicCard({ p, i, reduced }) {
       <p className="text-sm text-muted mt-2 leading-relaxed">{p.desc}</p>
       <p className="font-mono text-[10px] text-accent2 mt-3">{p.stack.join(' · ')}</p>
       <div className="mt-4 flex flex-col gap-1">
-        {p.links.map(l => (
-          <a key={l.href} href={l.href} target="_blank" rel="noreferrer"
-             className="font-mono text-xs text-accent hover:underline">↗ {l.label}</a>
-        ))}
+        {p.private ? (
+          <span className="font-mono text-xs text-muted">● private · demo on request</span>
+        ) : (
+          p.links.map(l => (
+            <a key={l.href} href={l.href} target="_blank" rel="noreferrer"
+               className="font-mono text-xs text-accent hover:underline">↗ {l.label}</a>
+          ))
+        )}
       </div>
     </motion.article>
   )
@@ -54,7 +58,7 @@ export default function Projects() {
   const reduced = useReducedMotion()
   return (
     <Section id="projects" title="projects — 12 in production">
-      <h3 className="font-mono text-xs tracking-widest text-muted mb-5">TRACK A · PUBLIC — go see for yourself</h3>
+      <h3 className="font-mono text-xs tracking-widest text-muted mb-5">TRACK A · PERSONAL — my own projects, public & private</h3>
       <div className="grid md:grid-cols-3 gap-4">
         {projects.publicTrack.map((p, i) => (
           <Tilt3D key={p.name} glare className="h-full">

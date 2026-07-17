@@ -24,6 +24,20 @@ export const projects = {
       stack: ['nginx', 'static HTML/CSS'],
       links: [{ label: 'visit site', href: 'https://www.hiddengrotto.org' }],
     },
+    {
+      name: 'Quran Reading Tracker',
+      tag: 'PRIVATE · SIDE PROJECT',
+      desc: 'A khatam programme was tracked on paper. Built a teacher/student app: juz progress rings, audio recitation uploads with an async review workflow, and completion certificates rendered as video.',
+      stack: ['React', 'Framer Motion', 'Express', 'PostgreSQL', 'Remotion'],
+      private: true,
+    },
+    {
+      name: 'Village Community Platform',
+      tag: 'PRIVATE · SIDE PROJECT',
+      desc: 'A kampung community coordinating across scattered chat groups. Built a multi-tenant platform for announcements, directories and events — one place for the whole village.',
+      stack: ['Express', 'PostgreSQL'],
+      private: true,
+    },
   ],
   enterpriseTrack: [
     {
@@ -67,20 +81,6 @@ export const projects = {
       solution: 'Mobile-first check-in gated by GPS geofences per site, with admin dashboards.',
       stack: ['React', 'PocketBase'],
       impact: 'Presence is proven, not claimed.',
-    },
-    {
-      name: 'Quran Reading Tracker',
-      problem: 'A khatam programme tracked on paper: no progress view, no accountability.',
-      solution: 'Teacher/student app with juz progress rings, audio recitation uploads and review workflow, completion certificates rendered as video.',
-      stack: ['React', 'Framer Motion', 'Express', 'PostgreSQL', 'Remotion'],
-      impact: 'Teachers review recitations asynchronously; completions celebrate themselves.',
-    },
-    {
-      name: 'Village Community Platform',
-      problem: 'A kampung community coordinating across scattered chat groups.',
-      solution: 'Multi-tenant community platform: announcements, directories, events.',
-      stack: ['Express', 'PostgreSQL'],
-      impact: 'One place for the whole village.',
     },
     {
       name: 'Uptime Sentinel',
