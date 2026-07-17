@@ -89,5 +89,12 @@ export const projects = {
       stack: ['Node', 'Express'],
       impact: 'The watcher is watched.',
     },
+    {
+      name: 'Contract Compliance Tracker',
+      problem: 'A 300-clause service-contract compliance schedule lived in a spreadsheet — no shared status view, painful to audit item by item.',
+      solution: 'Login-gated web checklist mirroring the full schedule (22 sections, 300+ clauses keyed to their clause numbers), with evidence attachments, JSON export/import and health monitoring.',
+      stack: ['Node', 'Express', 'JWT'],
+      impact: 'Compliance is tracked clause-by-clause in one gated place, audit-ready.',
+    },
   ],
 }
