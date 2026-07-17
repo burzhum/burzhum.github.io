@@ -42,7 +42,7 @@ export const projects = {
   enterpriseTrack: [
     {
       name: 'Device Maintenance Platform',
-      problem: 'Preventive maintenance for 1,800+ endpoints tracked in spreadsheets; no proof of work, no schedule discipline.',
+      problem: 'Preventive maintenance for 2,500+ endpoints tracked in spreadsheets; no proof of work, no schedule discipline.',
       solution: 'Full workflow app: schedules, technician job queues, digital signatures with stamps, bulk PDF reports, WhatsApp digests to leads.',
       stack: ['React', 'Express', 'PostgreSQL'],
       impact: 'Every maintenance visit is now signed, photographed and reportable in one click.',

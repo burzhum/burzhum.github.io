@@ -8,7 +8,7 @@ const spring = { type: 'spring', stiffness: 300, damping: 22 }
 
 const TILES = [
   { label: 'AVAILABILITY', base: 99.9, unit: '%', jitter: 0 },
-  { label: 'ENDPOINTS UP', base: 1800, unit: '+', jitter: 3 },
+  { label: 'ENDPOINTS UP', base: 2552, unit: '', jitter: 3 },
   { label: 'BACKUP JOBS OK', base: 9, unit: '/9', jitter: 0 },
   { label: 'OPEN P1 INCIDENTS', base: 0, unit: '', jitter: 0 },
 ]
