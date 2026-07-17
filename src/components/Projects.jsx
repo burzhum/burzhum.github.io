@@ -57,7 +57,7 @@ function EnterpriseCard({ p, i, reduced }) {
 export default function Projects() {
   const reduced = useReducedMotion()
   return (
-    <Section id="projects" title="projects — 12 in production">
+    <Section id="projects" title="projects — 13 in production">
       <h3 className="font-mono text-xs tracking-widest text-muted mb-5">TRACK A · PERSONAL — my own projects, public & private</h3>
       <div className="grid md:grid-cols-3 gap-4">
         {projects.publicTrack.map((p, i) => (

@@ -6,7 +6,7 @@ export const BOOT_LINES = [
   'MEM ....................... 18+ years, ECC',
   'SLA target ................ 99.90% [LOCKED]',
   'mounting /career .......... ok',
-  'mounting /projects ........ 12 apps found',
+  'mounting /projects ........ 13 apps found',
   'starting ai-agents.service  [ACTIVE]',
   'boot: OK — welcome.',
 ]
