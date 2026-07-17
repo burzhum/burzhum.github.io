@@ -2,8 +2,8 @@ import { profile } from '../src/data/profile'
 import { projects } from '../src/data/projects'
 
 test('12 apps total, GODM0D3 excluded', () => {
-  expect(projects.publicTrack).toHaveLength(3)
-  expect(projects.enterpriseTrack).toHaveLength(9)
+  expect(projects.publicTrack).toHaveLength(5)
+  expect(projects.enterpriseTrack).toHaveLength(7)
   expect(JSON.stringify(projects).toLowerCase()).not.toContain('godm')
 })
 
