@@ -3,7 +3,7 @@ export const profile = {
   role: 'Service Delivery Manager · Infrastructure Lead · AI-Augmented Builder',
   tagline: ['I keep hospitals', 'online_', 'I ship software', 'with AI_'],
   summary:
-    '18+ years of enterprise infrastructure. Today I run service delivery for a 900-bed government hospital — and ship production software by directing AI agents. Architecture, operations, deployment and verification are mine; the code is a conversation.',
+    '18+ years of enterprise infrastructure. Today I run service delivery for a 1,200-bed government hospital — and ship production software by directing AI agents. Architecture, operations, deployment and verification are mine; the code is a conversation.',
   location: 'Putrajaya, Malaysia',
   email: 'asrul.hasni@gmail.com',
   linkedin: 'https://www.linkedin.com/in/asrul-hasni',

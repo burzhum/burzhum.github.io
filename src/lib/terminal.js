@@ -34,7 +34,7 @@ const COMMANDS = {
   ],
   projects: () => [
     `public: ${projects.publicTrack.map(p => p.name).join(' | ')}`,
-    `enterprise: ${projects.enterpriseTrack.length} apps running inside a 900-bed government hospital`,
+    `enterprise: ${projects.enterpriseTrack.length} apps running inside a 1,200-bed government hospital`,
     'scroll to ./projects for the case studies.',
   ],
   skills: () => skills.map(g => `${g.group}: ${g.items.join(', ')}`),
