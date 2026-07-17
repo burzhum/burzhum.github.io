@@ -1,7 +1,7 @@
 export const experience = [
   {
     years: '2025 — now',
-    company: 'CET Development · 900-bed government hospital',
+    company: 'CET Development · 1,200-bed government hospital',
     title: 'Lead, Network & Server Engineering — de-facto Service Delivery Manager',
     points: [
       'RM32.2M government O&M contract; accountable for 99.90% availability with a 9-hour annual unplanned-downtime cap.',

@@ -66,7 +66,7 @@ export default function Projects() {
           </Tilt3D>
         ))}
       </div>
-      <h3 className="font-mono text-xs tracking-widest text-muted mt-12 mb-2">TRACK B · ENTERPRISE — built for a 900-bed government hospital</h3>
+      <h3 className="font-mono text-xs tracking-widest text-muted mt-12 mb-2">TRACK B · ENTERPRISE — built for a 1,200-bed government hospital</h3>
       <p className="text-xs text-muted mb-5 font-mono">details anonymized — these run on a private network, doing real work every day</p>
       <div className="grid md:grid-cols-3 gap-4">
         {projects.enterpriseTrack.map((p, i) => (
