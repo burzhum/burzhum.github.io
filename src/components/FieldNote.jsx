@@ -34,8 +34,8 @@ export default function FieldNote() {
         className="fixed inset-0 z-[30] pointer-events-none"
         style={{ opacity: paper, backgroundColor: '#edeae2' }}
       />
-      <div className="sticky top-0 h-screen flex items-center justify-center px-6">
-        <motion.div style={{ scale: qScale, opacity: qOpacity, y: qY }} className="relative z-[31] max-w-3xl text-center">
+      <div className="sticky top-0 z-[35] h-screen flex items-center justify-center px-6">
+        <motion.div style={{ scale: qScale, opacity: qOpacity, y: qY }} className="relative max-w-3xl text-center">
           <div className="font-mono text-xs tracking-[0.3em] uppercase text-[#c2410c] mb-6">Field note — §01</div>
           <p className="font-serif text-3xl md:text-5xl leading-[1.15] text-[#14150f]">
             I don’t write most of the code anymore. I decide what’s true, draw the boundaries, and make the
