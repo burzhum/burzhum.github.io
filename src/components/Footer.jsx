@@ -5,7 +5,7 @@ export default function Footer() {
     <footer className="mt-32 font-mono text-xs text-muted">
       {/* LATENT-style giant rolling ghost-outline band */}
       <div className="overflow-hidden select-none" aria-hidden="true">
-        <div className="marquee-track inline-block whitespace-nowrap ghost-outline font-display font-bold uppercase text-[16vw] leading-[0.85]" style={{ animationDuration: '30s' }}>
+        <div className="marquee-track inline-block whitespace-nowrap glow-outline font-display font-bold uppercase text-[16vw] leading-[0.85]" style={{ animationDuration: '30s' }}>
           {'HOSPITALS ONLINE — SOFTWARE SHIPPED — '.repeat(4)}
         </div>
       </div>
