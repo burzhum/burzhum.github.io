@@ -12,6 +12,9 @@ export default function Cursor() {
   const y = useMotionValue(-100)
   const rx = useSpring(x, { stiffness: 350, damping: 28, mass: 0.4 })
   const ry = useSpring(y, { stiffness: 350, damping: 28, mass: 0.4 })
+  // soft glow lags further behind for a spotlight feel
+  const gx = useSpring(x, { stiffness: 90, damping: 20, mass: 0.6 })
+  const gy = useSpring(y, { stiffness: 90, damping: 20, mass: 0.6 })
 
   useEffect(() => {
     if (reduced) return
@@ -38,6 +41,16 @@ export default function Cursor() {
 
   return (
     <>
+      {/* spotlight glow trailing the pointer */}
+      <motion.div
+        aria-hidden="true"
+        className="fixed top-0 left-0 z-[35] pointer-events-none rounded-full"
+        style={{
+          x: gx, y: gy, width: 480, height: 480, translateX: '-50%', translateY: '-50%',
+          background: 'radial-gradient(circle, var(--accent) 0%, transparent 60%)',
+          opacity: 0.1, filter: 'blur(40px)', mixBlendMode: 'screen',
+        }}
+      />
       <motion.div
         aria-hidden="true"
         className="fixed top-0 left-0 z-[60] pointer-events-none rounded-full bg-accent mix-blend-difference"
