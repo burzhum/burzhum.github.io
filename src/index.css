@@ -12,9 +12,9 @@
 /* LATENT-SPACE palette: near-black canvas, bone ink, electric-lime accent, one paper break. */
 :root, :root[data-theme='night'] {
   --bg: #0a0b0a; --ink: #edeae2; --muted: #8a8f85;
-  --accent: #c8ff2e; --accent2: #ff5c1a;
+  --accent: #3fc46e; --accent2: #ff5c1a;
   --card: #16181500; --panel: #161815; --line: #24271f;
-  --grid: rgba(200, 255, 46, 0.045);
+  --grid: rgba(63, 196, 110, 0.05);
 }
 :root[data-theme='day'] {
   --bg: #edeae2; --ink: #14150f; --muted: #6b6f63;
