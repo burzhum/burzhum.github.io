@@ -32,7 +32,7 @@ export default function Home() {
         <Thesis />
         <Projects />
       </main>
-      <GhostMarquee text="Hospitals online · software shipped · verified, not hoped" />
+      <GhostMarquee text="Direct the machine · own the outcome · verified, not hoped" />
       <main className="max-w-5xl mx-auto px-5 space-y-32 overflow-x-hidden">
         <Noc />
         <Skills />
