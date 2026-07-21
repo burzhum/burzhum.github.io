@@ -1,6 +1,7 @@
-@import '@fontsource/archivo/500.css';
+@import url('https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&display=swap');
 @import '@fontsource/archivo/700.css';
 @import '@fontsource/archivo/900.css';
+@import '@fontsource/instrument-serif/400.css';
 @import '@fontsource/jetbrains-mono/400.css';
 @import '@fontsource/jetbrains-mono/700.css';
 
@@ -8,26 +9,34 @@
 @tailwind components;
 @tailwind utilities;
 
+/* LATENT-SPACE palette: near-black canvas, bone ink, electric-lime accent, one paper break. */
 :root, :root[data-theme='night'] {
-  --bg: #0a0e14; --ink: #e6edf3; --muted: #8b949e;
-  --accent: #23d18b; --accent2: #39c5cf;
-  --card: #11161f; --line: #30363d;
-  --grid: rgba(35, 209, 139, 0.05);
+  --bg: #0a0b0a; --ink: #edeae2; --muted: #8a8f85;
+  --accent: #c8ff2e; --accent2: #ff5c1a;
+  --card: #16181500; --panel: #161815; --line: #24271f;
+  --grid: rgba(200, 255, 46, 0.045);
 }
 :root[data-theme='day'] {
-  --bg: #f4f1ea; --ink: #1a1a1a; --muted: #787878;
-  --accent: #ff4d00; --accent2: #b33900;
-  --card: #fffdf7; --line: #1a1a1a;
-  --grid: rgba(26, 26, 26, 0.05);
+  --bg: #edeae2; --ink: #14150f; --muted: #6b6f63;
+  --accent: #4d6b00; --accent2: #ff5c1a;
+  --card: #ffffff00; --panel: #e2ded2; --line: #14150f;
+  --grid: rgba(20, 21, 15, 0.05);
 }
 
 html { scroll-behavior: smooth; }
-body { @apply bg-bg text-ink font-display antialiased; transition: background-color .4s, color .4s; }
+body { @apply bg-bg text-ink font-mono antialiased; transition: background-color .4s, color .4s; }
 
 .grid-bg {
   background-image: linear-gradient(var(--grid) 1px, transparent 1px),
     linear-gradient(90deg, var(--grid) 1px, transparent 1px);
   background-size: 32px 32px;
+}
+
+/* Giant faded outline lettering — LATENT ghost-type band. */
+.ghost-outline {
+  -webkit-text-stroke: 1px var(--line);
+  color: transparent;
+  letter-spacing: -0.02em;
 }
 
 @keyframes blink { 50% { opacity: 0; } }

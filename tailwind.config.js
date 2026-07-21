@@ -6,10 +6,11 @@ export default {
       colors: {
         bg: 'var(--bg)', ink: 'var(--ink)', muted: 'var(--muted)',
         accent: 'var(--accent)', accent2: 'var(--accent2)',
-        card: 'var(--card)', line: 'var(--line)',
+        card: 'var(--card)', panel: 'var(--panel)', line: 'var(--line)',
       },
       fontFamily: {
-        display: ['Archivo', 'ui-sans-serif', 'sans-serif'],
+        display: ['"Clash Display"', 'Archivo', '"Arial Black"', 'sans-serif'],
+        serif: ['"Instrument Serif"', 'Georgia', 'serif'],
         mono: ['"JetBrains Mono"', 'Consolas', 'monospace'],
       },
     },
