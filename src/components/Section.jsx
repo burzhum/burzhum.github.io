@@ -11,11 +11,11 @@ export default function Section({ id, title, children }) {
   return (
     <motion.section
       id={id}
-      style={reduced ? undefined : { transformPerspective: 1200, transformOrigin: 'top center' }}
-      initial={reduced ? false : { opacity: 0, y: 32, rotateX: 10 }}
-      whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
-      viewport={{ once: true, margin: '-60px' }}
-      transition={{ duration: 0.6, ease: 'easeOut' }}
+      style={reduced ? undefined : { transformPerspective: 1200, transformOrigin: 'center 40%' }}
+      initial={reduced ? false : { opacity: 0, y: 40, scale: 1.12, filter: 'blur(8px)' }}
+      whileInView={{ opacity: 1, y: 0, scale: 1, filter: 'blur(0px)' }}
+      viewport={{ once: true, margin: '-80px' }}
+      transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
     >
       <div className="flex items-center justify-between border-b border-line pb-3 mb-8 font-mono text-xs tracking-[0.3em] uppercase">
         <span className="text-accent">
