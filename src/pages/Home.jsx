@@ -29,11 +29,11 @@ export default function Home() {
         <Hero />
         <About />
         <Experience />
-        <Thesis />
-        <Projects />
       </main>
       <GhostMarquee text="Direct the machine · own the outcome · verified, not hoped" />
-      <main className="max-w-5xl mx-auto px-5 space-y-32 overflow-x-hidden">
+      <main className="max-w-5xl mx-auto px-5 pt-8 pb-16 space-y-32 overflow-x-hidden">
+        <Thesis />
+        <Projects />
         <Noc />
         <Skills />
         <Contact />
