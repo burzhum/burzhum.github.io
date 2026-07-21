@@ -39,6 +39,15 @@ body { @apply bg-bg text-ink font-mono antialiased; transition: background-color
   letter-spacing: -0.02em;
 }
 
+/* Glowing lime outline — for the rolling "thought space" text on transparent bg. */
+.glow-outline {
+  -webkit-text-stroke: 1px var(--accent);
+  color: transparent;
+  letter-spacing: -0.02em;
+  filter: drop-shadow(0 0 6px var(--accent)) drop-shadow(0 0 18px var(--accent));
+  opacity: 0.85;
+}
+
 /* Custom cursor: hide the native one only when ours is live (fine pointer, motion allowed). */
 html.has-custom-cursor,
 html.has-custom-cursor * { cursor: none !important; }

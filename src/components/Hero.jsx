@@ -26,10 +26,9 @@ const parallaxSpring = { stiffness: 120, damping: 20, mass: 0.5 }
 export default function Hero() {
   const reduced = useReducedMotion()
   const rootRef = useRef(null)
-  // scroll-zoom: as the hero scrolls away it pushes back + blurs, like falling into the field
+  // scroll fade: hero dissolves as it leaves — no scale (scaling clipped content at the left edge)
   const { scrollYProgress } = useScroll({ target: rootRef, offset: ['start start', 'end start'] })
-  const zoomScale = useTransform(scrollYProgress, [0, 1], [1, 1.18])
-  const zoomBlur = useTransform(scrollYProgress, [0, 0.6, 1], ['blur(0px)', 'blur(0px)', 'blur(6px)'])
+  const zoomBlur = useTransform(scrollYProgress, [0, 0.6, 1], ['blur(0px)', 'blur(0px)', 'blur(5px)'])
   const zoomFade = useTransform(scrollYProgress, [0, 0.75, 1], [1, 1, 0])
   const px = useSpring(0.5, parallaxSpring)
   const py = useSpring(0.5, parallaxSpring)
@@ -61,7 +60,7 @@ export default function Hero() {
       onPointerMove={onPointerMove}
       onPointerLeave={reset}
     >
-    <motion.div style={reduced ? undefined : { scale: zoomScale, filter: zoomBlur, opacity: zoomFade, transformOrigin: 'center 30%' }}>
+    <motion.div style={reduced ? undefined : { filter: zoomBlur, opacity: zoomFade }}>
       {/* LATENT-style boot/status readout panel */}
       <div className="relative border border-line bg-panel/50 grid-bg px-5 py-4 md:px-7 md:py-5 overflow-hidden">
         <div className="flex items-center justify-between font-mono text-[10px] md:text-xs tracking-[0.25em] text-muted uppercase">

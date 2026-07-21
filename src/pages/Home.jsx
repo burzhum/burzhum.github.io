@@ -9,19 +9,18 @@ import Noc from '../components/Noc'
 import Skills from '../components/Skills'
 import Contact from '../components/Contact'
 import Terminal from '../components/Terminal'
-import ParticleField from '../components/ParticleField'
+import MatrixRain from '../components/MatrixRain'
 import Cursor from '../components/Cursor'
 import StatusBar from '../components/StatusBar'
 import GhostMarquee from '../components/GhostMarquee'
 import Thesis from '../components/Thesis'
-import HowIShip from '../components/HowIShip'
 import { useSmoothScroll } from '../lib/useSmoothScroll'
 
 export default function Home() {
   useSmoothScroll()
   return (
     <div className="min-h-screen grid-bg">
-      <ParticleField />
+      <MatrixRain />
       <Cursor />
       <BootLoader />
       <Nav />
@@ -33,15 +32,10 @@ export default function Home() {
         <Thesis />
         <Projects />
       </main>
-      <GhostMarquee text="Latent space — thought, rendered · hospitals online · software shipped" />
+      <GhostMarquee text="Hospitals online · software shipped · verified, not hoped" />
       <main className="max-w-5xl mx-auto px-5 space-y-32 overflow-x-hidden">
         <Noc />
         <Skills />
-      </main>
-      <div className="mt-32">
-        <HowIShip />
-      </div>
-      <main className="max-w-5xl mx-auto px-5 pt-32 overflow-x-hidden">
         <Contact />
       </main>
       <Footer />
