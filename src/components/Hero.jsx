@@ -53,11 +53,28 @@ export default function Hero() {
       onPointerMove={onPointerMove}
       onPointerLeave={reset}
     >
-      <p className="font-mono text-xs text-muted">
+      {/* LATENT-style boot/status readout panel */}
+      <div className="relative border border-line bg-panel/50 grid-bg px-5 py-4 md:px-7 md:py-5 overflow-hidden">
+        <div className="flex items-center justify-between font-mono text-[10px] md:text-xs tracking-[0.25em] text-muted uppercase">
+          <span>ASRUL.HASNI — SERVICE DELIVERY</span>
+          <span className="tabular-nums">V18.0 · 2026</span>
+        </div>
+        <div className="mt-3 flex items-end justify-between gap-4">
+          <span className="ghost-outline font-display font-bold leading-none text-4xl md:text-6xl select-none">INFRA</span>
+          <span className="font-display font-bold leading-none text-4xl md:text-6xl text-accent tabular-nums">99.90%</span>
+        </div>
+        <div className="mt-3 h-px bg-accent/70" />
+        <div className="flex flex-wrap items-center justify-between gap-x-4 font-mono text-[10px] md:text-xs tracking-[0.2em] text-muted uppercase mt-3">
+          <span className="text-accent">SYSTEMS NOMINAL</span>
+          <span className="tabular-nums">SLA_GREEN · 1,200 BEDS · 2,552 ENDPOINTS</span>
+        </div>
+      </div>
+
+      <p className="font-mono text-xs text-muted mt-10">
         $ whoami<span className="inline-block w-2 h-3.5 bg-accent ml-1.5 cursor-blink align-middle" />
       </p>
       <motion.h1
-        className="font-black uppercase leading-[0.95] tracking-tight text-5xl md:text-7xl mt-5"
+        className="font-display font-bold uppercase leading-[0.92] tracking-tight text-5xl md:text-7xl mt-5"
         aria-label="I keep hospitals online. I ship software with AI."
         style={reduced ? undefined : { x: h1x, y: h1y, rotateX: h1rx, rotateY: h1ry, transformStyle: 'preserve-3d' }}
       >
@@ -74,7 +91,10 @@ export default function Hero() {
         ))}
       </motion.h1>
       <motion.div style={reduced ? undefined : { x: metax, y: metay }}>
-        <p className="font-mono text-xs tracking-widest text-accent2 uppercase mt-6">{profile.role}</p>
+        <p className="font-serif italic text-2xl md:text-3xl text-ink/90 mt-6 leading-snug max-w-xl">
+          Architecture, operations, deployment — mine. The code is a conversation.
+        </p>
+        <p className="font-mono text-xs tracking-widest text-accent2 uppercase mt-5">{profile.role}</p>
         <p className="text-muted max-w-xl mt-4 text-sm leading-relaxed">{profile.summary}</p>
       </motion.div>
       <motion.div
