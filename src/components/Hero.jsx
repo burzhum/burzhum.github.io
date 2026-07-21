@@ -1,4 +1,5 @@
-import { motion, useSpring, useTransform, useReducedMotion } from 'framer-motion'
+import { useRef } from 'react'
+import { motion, useScroll, useSpring, useTransform, useReducedMotion } from 'framer-motion'
 import { profile } from '../data/profile'
 import { useCountUp } from '../lib/useCountUp'
 import Marquee from './Marquee'
@@ -24,6 +25,12 @@ const parallaxSpring = { stiffness: 120, damping: 20, mass: 0.5 }
 
 export default function Hero() {
   const reduced = useReducedMotion()
+  const rootRef = useRef(null)
+  // scroll-zoom: as the hero scrolls away it pushes back + blurs, like falling into the field
+  const { scrollYProgress } = useScroll({ target: rootRef, offset: ['start start', 'end start'] })
+  const zoomScale = useTransform(scrollYProgress, [0, 1], [1, 1.18])
+  const zoomBlur = useTransform(scrollYProgress, [0, 0.6, 1], ['blur(0px)', 'blur(0px)', 'blur(6px)'])
+  const zoomFade = useTransform(scrollYProgress, [0, 0.75, 1], [1, 1, 0])
   const px = useSpring(0.5, parallaxSpring)
   const py = useSpring(0.5, parallaxSpring)
   // depth layers: h1 moves most + tilts, meta moves less, stats least
@@ -48,11 +55,13 @@ export default function Hero() {
   return (
     <section
       id="hero"
+      ref={rootRef}
       className="pt-10"
       style={reduced ? undefined : { perspective: '1000px' }}
       onPointerMove={onPointerMove}
       onPointerLeave={reset}
     >
+    <motion.div style={reduced ? undefined : { scale: zoomScale, filter: zoomBlur, opacity: zoomFade, transformOrigin: 'center 30%' }}>
       {/* LATENT-style boot/status readout panel */}
       <div className="relative border border-line bg-panel/50 grid-bg px-5 py-4 md:px-7 md:py-5 overflow-hidden">
         <div className="flex items-center justify-between font-mono text-[10px] md:text-xs tracking-[0.25em] text-muted uppercase">
@@ -106,6 +115,7 @@ export default function Hero() {
       <div className="mt-14 -mx-5">
         <Marquee items={['Infrastructure', 'Incident Command', 'AI-Augmented Engineering', 'Service Delivery', 'VMware', 'Cisco', 'Veeam', 'React', 'Node', 'PostgreSQL']} />
       </div>
+    </motion.div>
     </section>
   )
 }

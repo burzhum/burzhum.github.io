@@ -20,4 +20,8 @@ window.matchMedia = window.matchMedia || function () {
 window.IntersectionObserver = window.IntersectionObserver || class {
   observe() {} unobserve() {} disconnect() {}
 }
+// Lenis (smooth scroll) needs ResizeObserver, which jsdom lacks
+window.ResizeObserver = window.ResizeObserver || class {
+  observe() {} unobserve() {} disconnect() {}
+}
 window.scrollTo = window.scrollTo || function () {}

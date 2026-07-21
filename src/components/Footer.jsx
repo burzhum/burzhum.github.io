@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom'
 export default function Footer() {
   return (
     <footer className="mt-32 font-mono text-xs text-muted">
-      {/* LATENT-style giant ghost-outline band */}
+      {/* LATENT-style giant rolling ghost-outline band */}
       <div className="overflow-hidden select-none" aria-hidden="true">
-        <div className="ghost-outline font-display font-bold uppercase whitespace-nowrap text-[16vw] leading-[0.85] -ml-2">
-          HOSPITALS ONLINE — SOFTWARE SHIPPED
+        <div className="marquee-track inline-block whitespace-nowrap ghost-outline font-display font-bold uppercase text-[16vw] leading-[0.85]" style={{ animationDuration: '30s' }}>
+          {'HOSPITALS ONLINE — SOFTWARE SHIPPED — '.repeat(4)}
         </div>
       </div>
 
