@@ -6,10 +6,10 @@ import { projects } from '../data/projects'
 const spring = { type: 'spring', stiffness: 300, damping: 22 }
 
 const card = (reduced, i) => ({
-  initial: reduced ? false : { opacity: 0, y: 24, rotateX: 18 },
-  whileInView: { opacity: 1, y: 0, rotateX: 0 },
+  initial: reduced ? false : { opacity: 0, y: 28, scale: 0.96, rotateX: 18 },
+  whileInView: { opacity: 1, y: 0, scale: 1, rotateX: 0 },
   viewport: { once: true, margin: '-30px' },
-  transition: { delay: (i % 3) * 0.07, duration: 0.45 },
+  transition: { delay: (i % 3) * 0.07, duration: 0.5 },
   style: reduced ? undefined : { transformPerspective: 800 },
   ...(reduced ? {} : {
     whileHover: { y: -6, transition: spring },
@@ -20,9 +20,9 @@ const card = (reduced, i) => ({
 function PublicCard({ p, i, reduced }) {
   return (
     <motion.article {...card(reduced, i)} data-testid="project-card"
-      className="h-full border border-line bg-card p-5 hover:border-accent transition-colors group">
+      className="h-full glass p-5 hover:border-accent transition-colors group">
       <p className="font-mono text-[10px] tracking-[0.25em] text-accent">{p.tag}</p>
-      <h4 className="font-black uppercase text-lg mt-2 group-hover:text-accent transition-colors">{p.name}</h4>
+      <h4 className="font-display font-bold uppercase text-lg mt-2 group-hover:text-accent transition-colors">{p.name}</h4>
       <p className="text-sm text-muted mt-2 leading-relaxed">{p.desc}</p>
       <p className="font-mono text-[10px] text-accent2 mt-3">{p.stack.join(' · ')}</p>
       <div className="mt-4 flex flex-col gap-1">
@@ -42,8 +42,8 @@ function PublicCard({ p, i, reduced }) {
 function EnterpriseCard({ p, i, reduced }) {
   return (
     <motion.article {...card(reduced, i)} data-testid="project-card"
-      className="h-full border border-line bg-card p-5 hover:border-accent transition-colors">
-      <h4 className="font-black uppercase text-base">{p.name}</h4>
+      className="h-full glass p-5 hover:border-accent transition-colors">
+      <h4 className="font-display font-bold uppercase text-base">{p.name}</h4>
       {[['PROBLEM', p.problem], ['SOLUTION', p.solution], ['IMPACT', p.impact]].map(([k, v]) => (
         <p key={k} className="text-xs text-muted mt-2 leading-relaxed">
           <span className="font-mono text-[10px] tracking-[0.2em] text-accent mr-2">{k}</span>{v}

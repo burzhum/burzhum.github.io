@@ -52,6 +52,23 @@ body { @apply bg-bg text-ink font-mono antialiased; transition: background-color
 html.has-custom-cursor,
 html.has-custom-cursor * { cursor: none !important; }
 
+/* Glassmorphism panel. */
+.glass {
+  background: color-mix(in oklab, var(--panel) 55%, transparent);
+  backdrop-filter: blur(12px) saturate(1.25);
+  -webkit-backdrop-filter: blur(12px) saturate(1.25);
+  border: 1px solid var(--line);
+}
+
+/* Layered aurora gradient backdrop — depth behind the content. */
+.aurora {
+  background:
+    radial-gradient(38% 48% at 18% 12%, color-mix(in oklab, var(--accent) 20%, transparent), transparent 70%),
+    radial-gradient(42% 52% at 85% 28%, color-mix(in oklab, var(--accent2) 14%, transparent), transparent 70%),
+    radial-gradient(48% 58% at 62% 88%, color-mix(in oklab, var(--accent) 12%, transparent), transparent 70%);
+  filter: blur(24px);
+}
+
 /* Film-grain overlay for the LATENT "noise-bg" texture. */
 .noise-bg {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");

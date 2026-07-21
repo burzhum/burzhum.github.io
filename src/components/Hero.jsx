@@ -62,7 +62,7 @@ export default function Hero() {
     >
     <motion.div style={reduced ? undefined : { filter: zoomBlur, opacity: zoomFade }}>
       {/* LATENT-style boot/status readout panel */}
-      <div className="relative border border-line bg-panel/50 grid-bg px-5 py-4 md:px-7 md:py-5 overflow-hidden">
+      <div className="relative glass grid-bg px-5 py-4 md:px-7 md:py-5 overflow-hidden">
         <div className="flex items-center justify-between font-mono text-[10px] md:text-xs tracking-[0.25em] text-muted uppercase">
           <span>ASRUL.HASNI — SERVICE DELIVERY</span>
           <span className="tabular-nums">V18.0 · 2026</span>

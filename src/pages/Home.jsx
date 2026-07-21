@@ -14,13 +14,22 @@ import Cursor from '../components/Cursor'
 import StatusBar from '../components/StatusBar'
 import GhostMarquee from '../components/GhostMarquee'
 import Thesis from '../components/Thesis'
+import FieldNote from '../components/FieldNote'
 import { useSmoothScroll } from '../lib/useSmoothScroll'
+import { motion, useScroll, useTransform } from 'framer-motion'
 
 export default function Home() {
   useSmoothScroll()
+  const { scrollY } = useScroll()
+  const auroraY = useTransform(scrollY, [0, 4000], [0, -360])
   return (
     <div className="min-h-screen grid-bg">
       <MatrixRain />
+      <motion.div
+        aria-hidden="true"
+        className="aurora fixed inset-0 pointer-events-none"
+        style={{ zIndex: -5, y: auroraY, opacity: 0.5 }}
+      />
       <Cursor />
       <BootLoader />
       <Nav />
@@ -31,9 +40,12 @@ export default function Home() {
         <Experience />
       </main>
       <GhostMarquee text="Direct the machine · own the outcome · verified, not hoped" />
-      <main className="max-w-5xl mx-auto px-5 pt-8 pb-0 space-y-32 overflow-x-hidden">
+      <main className="max-w-5xl mx-auto px-5 pt-8 space-y-32 overflow-x-hidden">
         <Thesis />
         <Projects />
+      </main>
+      <FieldNote />
+      <main className="max-w-5xl mx-auto px-5 pt-8 pb-0 space-y-32 overflow-x-hidden">
         <Noc />
         <Skills />
         <Contact />
