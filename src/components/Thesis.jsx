@@ -4,10 +4,10 @@ import { motion, useScroll, useTransform, useReducedMotion } from 'framer-motion
 // Statement whose words ignite (muted -> ink, lime for accent words) as the
 // section scrolls through the viewport. No sticky pin — so no trailing dead space.
 const WORDS =
-  'Software is leverage. Leverage is direction — not typing. I architect, direct, verify. The machine writes the code; production is the proof.'.split(
+  'Software is leverage. I architect, direct, verify. The machine writes the code — production is the proof.'.split(
     ' '
   )
-const ACCENT = new Set(['leverage.', 'leverage', 'verify.', 'proof.'])
+const ACCENT = new Set(['leverage.', 'verify.', 'proof.'])
 
 function Word({ word, i, total, progress, reduced }) {
   const start = i / total
@@ -19,8 +19,8 @@ function Word({ word, i, total, progress, reduced }) {
     ['var(--muted)', acid ? 'var(--accent)' : 'var(--ink)']
   )
   return (
-    <motion.span style={reduced ? { color: acid ? 'var(--accent)' : 'var(--ink)' } : { color }} className="mr-[0.3em]">
-      {word}
+    <motion.span style={reduced ? { color: acid ? 'var(--accent)' : 'var(--ink)' } : { color }}>
+      {word}{' '}
     </motion.span>
   )
 }
@@ -36,7 +36,7 @@ export default function Thesis() {
         <span className="text-accent">HOW I BUILD</span>
         <span className="text-muted tabular-nums">— THE METHOD</span>
       </div>
-      <p className="font-display font-semibold uppercase leading-[1.08] tracking-tight text-2xl md:text-4xl max-w-3xl">
+      <p className="font-display font-semibold uppercase leading-[1.1] tracking-tight text-xl sm:text-2xl md:text-3xl max-w-2xl">
         {WORDS.map((w, i) => (
           <Word key={i} word={w} i={i} total={WORDS.length} progress={scrollYProgress} reduced={reduced} />
         ))}
