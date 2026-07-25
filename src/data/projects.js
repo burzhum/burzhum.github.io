@@ -39,6 +39,15 @@ export const projects = {
       private: true,
     },
   ],
+  clientTrack: [
+    {
+      name: 'Aries Engineering',
+      tag: 'LIVE · CLIENT SITE',
+      desc: 'A Sungai Petani industrial-automation firm — PLC/SCADA, DCS, Yaskawa robotics — was stuck on an aging WordPress site. Rebuilt it as a Cyber-Kinetic React site: pointer-reactive articulated robot-arm SVG, wiremesh particle field, glitch/kinetic type, magnetic buttons. Cut over live on their own domain.',
+      stack: ['React', 'Vite', 'Framer Motion', 'Tailwind'],
+      links: [{ label: 'ariesgroups.com', href: 'https://www.ariesgroups.com' }],
+    },
+  ],
   enterpriseTrack: [
     {
       name: 'Device Maintenance Platform',
