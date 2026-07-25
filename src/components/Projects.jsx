@@ -57,7 +57,7 @@ function EnterpriseCard({ p, i, reduced }) {
 export default function Projects() {
   const reduced = useReducedMotion()
   return (
-    <Section id="projects" title="projects — 13 in production">
+    <Section id="projects" title="projects — 14 in production">
       <h3 className="font-mono text-xs tracking-widest text-muted mb-5">TRACK A · PERSONAL — my own projects, public & private</h3>
       <div className="grid md:grid-cols-3 gap-4">
         {projects.publicTrack.map((p, i) => (
@@ -66,7 +66,15 @@ export default function Projects() {
           </Tilt3D>
         ))}
       </div>
-      <h3 className="font-mono text-xs tracking-widest text-muted mt-12 mb-2">TRACK B · ENTERPRISE — built for a 1,200-bed government hospital</h3>
+      <h3 className="font-mono text-xs tracking-widest text-muted mt-12 mb-2">TRACK B · CLIENT WORK — commissioned, live on the client’s own domain</h3>
+      <div className="grid md:grid-cols-3 gap-4">
+        {projects.clientTrack.map((p, i) => (
+          <Tilt3D key={p.name} glare className="h-full">
+            <PublicCard p={p} i={i} reduced={reduced} />
+          </Tilt3D>
+        ))}
+      </div>
+      <h3 className="font-mono text-xs tracking-widest text-muted mt-12 mb-2">TRACK C · ENTERPRISE — built for a 1,200-bed government hospital</h3>
       <p className="text-xs text-muted mb-5 font-mono">details anonymized — these run on a private network, doing real work every day</p>
       <div className="grid md:grid-cols-3 gap-4">
         {projects.enterpriseTrack.map((p, i) => (

@@ -9,7 +9,7 @@ const NEOFETCH = [
   '     ▐▓▓▓▓▓▓▓▓▓▓▌     Host: Putrajaya, MY',
   '      ▀▓▓▓▓▓▓▓▓▀      Uptime: 18+ years',
   '     ▄▓▓▓▓▓▓▓▓▓▓▄     Shell: PowerShell + plink',
-  '    ▐▓▓▓ ASRUL ▓▓▌    Packages: 13 apps (production)',
+  '    ▐▓▓▓ ASRUL ▓▓▌    Packages: 14 apps (production)',
   '     ▀▀▀▀▀▀▀▀▀▀▀▀     SLA: 99.90%',
 ]
 
@@ -34,6 +34,7 @@ const COMMANDS = {
   ],
   projects: () => [
     `public: ${projects.publicTrack.map(p => p.name).join(' | ')}`,
+    `client: ${projects.clientTrack.map(p => p.name).join(' | ')} — live on their own domain`,
     `enterprise: ${projects.enterpriseTrack.length} apps running inside a 1,200-bed government hospital`,
     'scroll to ./projects for the case studies.',
   ],

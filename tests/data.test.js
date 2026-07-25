@@ -1,9 +1,13 @@
 import { profile } from '../src/data/profile'
 import { projects } from '../src/data/projects'
 
-test('13 apps total, GODM0D3 excluded', () => {
+test('14 apps total, GODM0D3 excluded', () => {
   expect(projects.publicTrack).toHaveLength(5)
+  expect(projects.clientTrack).toHaveLength(1)
   expect(projects.enterpriseTrack).toHaveLength(8)
+  const total =
+    projects.publicTrack.length + projects.clientTrack.length + projects.enterpriseTrack.length
+  expect(total).toBe(14)
   expect(JSON.stringify(projects).toLowerCase()).not.toContain('godm')
 })
 
