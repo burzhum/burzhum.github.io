@@ -66,7 +66,7 @@ export const projects = {
     {
       name: 'IT Knowledge Base + Asset Register',
       problem: 'Years of tribal knowledge locked in a legacy helpdesk and individual heads.',
-      solution: '2,400+ entry searchable knowledge base fused with a hardware asset register.',
+      solution: '2,400+ entry searchable knowledge base fused with a hardware asset register, plus fuzzy duplicate detection that groups the same issue written six different ways for one-click review.',
       stack: ['React', 'Express', 'PostgreSQL', 'pg_trgm'],
       impact: 'New engineers find the fix before they find the person who knew it.',
     },
