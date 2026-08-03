@@ -12,7 +12,6 @@ import Terminal from '../components/Terminal'
 import MatrixRain from '../components/MatrixRain'
 import Cursor from '../components/Cursor'
 import StatusBar from '../components/StatusBar'
-import GhostMarquee from '../components/GhostMarquee'
 import Thesis from '../components/Thesis'
 import FieldNote from '../components/FieldNote'
 import { useSmoothScroll } from '../lib/useSmoothScroll'
@@ -39,7 +38,6 @@ export default function Home() {
         <About />
         <Experience />
       </main>
-      <GhostMarquee text="Direct the machine · own the outcome · verified, not hoped" />
       <main className="max-w-5xl mx-auto px-5 pt-8 space-y-32 overflow-x-hidden">
         <Thesis />
         <Projects />
