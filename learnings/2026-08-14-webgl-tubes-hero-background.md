@@ -20,3 +20,24 @@
 ## Rule
 
 When a demo's headline library is heavy, dynamic-import it behind a hardware gate and give its canvas a scroll position it can leave — then verify with a foregrounded browser and a control screenshot, because a backgrounded tab and a washed-out theme both fail silently.
+
+---
+
+# Follow-up: the INFRA ghost lettering was unreadable
+
+**Problem:** the hero's outlined "INFRA" could not be read on night_shift. Reported right after the tubes shipped, so it looked like a regression from them.
+
+**It was not.** `.ghost-outline` strokes with `var(--line)`, the hairline colour — `#24271f` against `--bg #0a0b0a` is **1.30:1**. The word had been effectively invisible since the LATENT reskin; the tube field's bloom behind the glass panel just drew the eye to where it should have been.
+
+## Approach
+
+1. Compute the ratio before touching anything. A 12-line Node script (sRGB → linear → relative luminance) turns "looks faint" into `1.30:1`, which decides the fix instead of guessing at a colour.
+2. Give the ghost type its **own token** (`--ghost`) rather than nudging `--line`. `--line` draws real borders and dividers all over the site; brightening it to fix one word would have repainted every rule on the page.
+3. Set it per theme and check both. First pass lightened day to `#7c8073` too — but day strokes with near-black `#14150f` at **15.27:1** and already read perfectly. Day keeps its old value, so day_shift renders byte-identically.
+4. Verify with a **clipped, 2x screenshot of just the panel**, not a full-page shot. At full-page scale a 1px stroke is a few grey pixels and any judgement about it is imaginary.
+
+Result: night `#5f635a` = 3.21:1 against the page, 2.91:1 over the glass panel. Same class also drives the BootLoader's giant INFRA, which now reads slightly stronger — checked, kept.
+
+## Rule
+
+Before recolouring anything for legibility, compute the contrast ratio and check whether the token you are about to change is shared. A "ghost" element still needs its own colour token — borrowing the border colour is how something ends up rendered correctly and still unreadable.
