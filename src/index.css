@@ -15,12 +15,15 @@
   --accent: #3fc46e; --accent2: #ff5c1a;
   --card: #16181500; --panel: #161815; --line: #24271f;
   --grid: rgba(63, 196, 110, 0.05);
+  /* outlined ghost lettering: --line is a 1.3:1 hairline against --bg, unreadable at stroke width */
+  --ghost: #5f635a;
 }
 :root[data-theme='day'] {
   --bg: #edeae2; --ink: #14150f; --muted: #6b6f63;
   --accent: #4d6b00; --accent2: #ff5c1a;
   --card: #ffffff00; --panel: #e2ded2; --line: #14150f;
   --grid: rgba(20, 21, 15, 0.05);
+  --ghost: #14150f; /* day already had enough contrast off --line; keep it unchanged */
 }
 
 html { scroll-behavior: smooth; }
@@ -34,7 +37,7 @@ body { @apply bg-bg text-ink font-mono antialiased; transition: background-color
 
 /* Giant faded outline lettering — LATENT ghost-type band. */
 .ghost-outline {
-  -webkit-text-stroke: 1px var(--line);
+  -webkit-text-stroke: 1px var(--ghost);
   color: transparent;
   letter-spacing: -0.02em;
 }
