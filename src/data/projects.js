@@ -38,6 +38,13 @@ export const projects = {
       stack: ['Express', 'PostgreSQL'],
       private: true,
     },
+    {
+      name: 'AI Office',
+      tag: 'PRIVATE · SIDE PROJECT',
+      desc: 'I run a team of AI coding agents in parallel, so I built them an office: a live pixel-art building with a room per department and a desk per project. Each agent walks to its desk when it starts work, with live usage meters and cost estimates over its head.',
+      stack: ['Node', 'Canvas', 'Server-Sent Events'],
+      private: true,
+    },
   ],
   clientTrack: [
     {
@@ -52,9 +59,9 @@ export const projects = {
     {
       name: 'Device Maintenance Platform',
       problem: 'Preventive maintenance for 2,500+ endpoints tracked in spreadsheets; no proof of work, no schedule discipline.',
-      solution: 'Full workflow app: schedules, technician job queues, digital signatures with stamps, bulk PDF reports, WhatsApp digests to leads.',
+      solution: 'Full workflow app: schedules, technician job queues, digital signatures with stamps, bulk PDF reports, WhatsApp digests to leads, plus a loaner tracker for spare equipment with due-date reminders.',
       stack: ['React', 'Express', 'PostgreSQL'],
-      impact: 'Every maintenance visit is now signed, photographed and reportable in one click.',
+      impact: 'Every maintenance visit is signed and reportable in one click, and every lent-out spare has a name against it.',
     },
     {
       name: 'IT Team Task Manager',
@@ -93,10 +100,10 @@ export const projects = {
     },
     {
       name: 'Estate Intelligence Console',
-      problem: 'Infrastructure health was learned from a monthly report, up to 35 days late. The report had become the detection system.',
-      solution: 'Collectors poll monitoring, virtualisation, firewall and backup sources every 15 minutes into one console: live wall display, open-event ledger, expiry radar for warranties and licences, evidence locker, and a one-click pre-meeting brief. Disk alerts go to the owning team on WhatsApp.',
-      stack: ['Node', 'Express', 'SQLite', 'SNMP', 'WinRM'],
-      impact: 'The monthly report now summarises what was already caught, instead of being the first to notice.',
+      problem: 'Data-centre problems surfaced in a monthly report, sometimes weeks after they started.',
+      solution: 'One live console that watches servers, storage, firewall, backups, warranties and licences every 15 minutes. Alerts land on the right team’s WhatsApp, and a meeting brief builds itself in one click.',
+      stack: ['Node', 'Express', 'SQLite'],
+      impact: 'Problems get caught the day they happen, not the month after.',
     },
     {
       name: 'Contract Compliance Tracker',
@@ -107,17 +114,17 @@ export const projects = {
     },
     {
       name: 'Identity-Aware Device Status Board',
-      problem: '2,500+ endpoints, and "is this device actually down?" took a walk to the ward. Ping proved an address answered, not which machine.',
-      solution: 'Read-only status board that cross-checks every answer against the BIOS serial on record. A device is only called OK or down when its identity is confirmed; otherwise it says UNVERIFIED. Paced probing, room-level outage detection, per-department views.',
+      problem: '2,500+ PCs and printers across a 1,200-bed hospital, and "is it really down?" meant a walk to the ward.',
+      solution: 'A live status board for every device, grouped by department, that double-checks each machine is really the one on record before it raises an alarm.',
       stack: ['React', 'Express', 'PostgreSQL'],
-      impact: 'Exposed 150+ addresses answering as the wrong machine, and false alarms fell from 367 to 91 overnight.',
+      impact: 'Any device, any ward, answered from a desk in 30 seconds.',
     },
     {
       name: 'Rolling Ward PC Restarter',
-      problem: 'Ward PCs ran for weeks without a restart, and "slow PC" tickets piled up.',
-      solution: 'Scan a department, restart only machines that are verified and overdue, in waves with a countdown warning to users. Approved hours per department, scheduled overnight runs, and an audit row for every action. Every guard is enforced server-side, and dry run is the default.',
+      problem: 'Slow-PC complaints across the wards, from machines that had not been restarted in weeks.',
+      solution: 'Pick a department and it restarts only the PCs that need it, in safe waves, warning users first and logging every step. Runs overnight inside each ward’s approved hours.',
       stack: ['React', 'Express', 'PostgreSQL', 'PowerShell'],
-      impact: 'A ward-wide restart went from a technician walking desk to desk to one approved click, and nothing restarts unless its identity is proven.',
+      impact: 'A desk-by-desk chore became one click, with the safety built in.',
     },
   ],
 }
