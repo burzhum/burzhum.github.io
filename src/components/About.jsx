@@ -9,7 +9,7 @@ const FACTS = [
   ['ROLE', 'Service Delivery Manager / Infra Lead'],
   ['LOCATION', profile.location],
   ['INDUSTRY', 'Healthcare · Enterprise IT'],
-  ['UPTIME', '18+ years and counting'],
+  ['UPTIME', '20+ years and counting'],
 ]
 
 const WORKFLOW = [
