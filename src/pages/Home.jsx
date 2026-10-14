@@ -10,7 +10,6 @@ import Skills from '../components/Skills'
 import Contact from '../components/Contact'
 import Terminal from '../components/Terminal'
 import MatrixRain from '../components/MatrixRain'
-import TubesBg from '../components/TubesBg'
 import Cursor from '../components/Cursor'
 import StatusBar from '../components/StatusBar'
 import Thesis from '../components/Thesis'
@@ -25,7 +24,6 @@ export default function Home() {
   return (
     <div className="min-h-screen grid-bg relative">
       <MatrixRain />
-      <TubesBg />
       <motion.div
         aria-hidden="true"
         className="aurora fixed inset-0 pointer-events-none"

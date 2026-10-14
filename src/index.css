@@ -72,17 +72,6 @@ html.has-custom-cursor * { cursor: none !important; }
   filter: blur(24px);
 }
 
-/* WebGL tube field behind the hero: dissolves downward so it never fights body copy.
-   Hidden on day_shift — see rule below. */
-.tubes-layer {
-  opacity: 0.75;
-  -webkit-mask-image: linear-gradient(to bottom, #000 55%, transparent 100%);
-  mask-image: linear-gradient(to bottom, #000 55%, transparent 100%);
-}
-/* day_shift hides it outright: the scene's dark bloom greys the whole cream page, and a
-   dimmed version just reads as a smudge. Hidden canvas also parks the engine's render loop. */
-:root[data-theme='day'] .tubes-layer { display: none; }
-
 /* Film-grain overlay for the LATENT "noise-bg" texture. */
 .noise-bg {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
