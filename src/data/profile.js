@@ -11,7 +11,7 @@ export const profile = {
   stats: [
     { value: 99.9, suffix: '%', label: 'SLA availability', decimals: 1 },
     { value: 32, prefix: 'RM', suffix: 'M', label: 'O&M contract managed' },
-    { value: 14, label: 'production apps live' },
+    { value: 16, label: 'production apps live' },
     { value: 18, suffix: '+', label: 'years in the trade' },
   ],
 }

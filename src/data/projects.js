@@ -92,11 +92,11 @@ export const projects = {
       impact: 'Presence is proven, not claimed.',
     },
     {
-      name: 'Uptime Sentinel',
-      problem: 'Even the monitoring needed monitoring.',
-      solution: 'Independent watchdog service with public status view and escalation rules.',
-      stack: ['Node', 'Express'],
-      impact: 'The watcher is watched.',
+      name: 'Estate Intelligence Console',
+      problem: 'Infrastructure health was learned from a monthly report, up to 35 days late. The report had become the detection system.',
+      solution: 'Collectors poll monitoring, virtualisation, firewall and backup sources every 15 minutes into one console: live wall display, open-event ledger, expiry radar for warranties and licences, evidence locker, and a one-click pre-meeting brief. Disk alerts go to the owning team on WhatsApp.',
+      stack: ['Node', 'Express', 'SQLite', 'SNMP', 'WinRM'],
+      impact: 'The monthly report now summarises what was already caught, instead of being the first to notice.',
     },
     {
       name: 'Contract Compliance Tracker',
@@ -104,6 +104,20 @@ export const projects = {
       solution: 'Login-gated web checklist mirroring the full schedule (22 sections, 300+ clauses keyed to their clause numbers), with evidence attachments, JSON export/import and health monitoring.',
       stack: ['Node', 'Express', 'JWT'],
       impact: 'Compliance is tracked clause-by-clause in one gated place, audit-ready.',
+    },
+    {
+      name: 'Identity-Aware Device Status Board',
+      problem: '2,500+ endpoints, and "is this device actually down?" took a walk to the ward. Ping proved an address answered, not which machine.',
+      solution: 'Read-only status board that cross-checks every answer against the BIOS serial on record. A device is only called OK or down when its identity is confirmed; otherwise it says UNVERIFIED. Paced probing, room-level outage detection, per-department views.',
+      stack: ['React', 'Express', 'PostgreSQL'],
+      impact: 'Exposed 150+ addresses answering as the wrong machine, and false alarms fell from 367 to 91 overnight.',
+    },
+    {
+      name: 'Rolling Ward PC Restarter',
+      problem: 'Ward PCs ran for weeks without a restart, and "slow PC" tickets piled up.',
+      solution: 'Scan a department, restart only machines that are verified and overdue, in waves with a countdown warning to users. Approved hours per department, scheduled overnight runs, and an audit row for every action. Every guard is enforced server-side, and dry run is the default.',
+      stack: ['React', 'Express', 'PostgreSQL', 'PowerShell'],
+      impact: 'A ward-wide restart went from a technician walking desk to desk to one approved click, and nothing restarts unless its identity is proven.',
     },
   ],
 }
