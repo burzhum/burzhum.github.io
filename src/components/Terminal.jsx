@@ -45,7 +45,7 @@ export default function Terminal() {
           initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 24 }}
           transition={{ duration: 0.2 }}
           className="fixed inset-x-0 bottom-0 z-50 h-[45vh] bg-bg border-t-2 border-accent font-mono text-xs md:text-sm flex flex-col"
-          role="dialog" aria-label="terminal"
+          role="dialog" aria-label="terminal" data-lenis-prevent
         >
           <div className="flex justify-between items-center px-4 py-1.5 border-b border-line text-muted">
             <span>asrul@infra: interactive session</span>
