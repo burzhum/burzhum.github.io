@@ -9,7 +9,7 @@ const NEOFETCH = [
   '     ▐▓▓▓▓▓▓▓▓▓▓▌     Host: Putrajaya, MY',
   '      ▀▓▓▓▓▓▓▓▓▀      Uptime: 20+ years',
   '     ▄▓▓▓▓▓▓▓▓▓▓▄     Shell: PowerShell + plink',
-  '    ▐▓▓▓ ASRUL ▓▓▌    Packages: 17 apps (production)',
+  '    ▐▓▓▓ ASRUL ▓▓▌    Packages: 18 apps (production)',
   '     ▀▀▀▀▀▀▀▀▀▀▀▀     SLA: 99.90%',
 ]
 
