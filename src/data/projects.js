@@ -45,6 +45,13 @@ export const projects = {
       stack: ['Node', 'Canvas', 'Server-Sent Events'],
       private: true,
     },
+    {
+      name: 'KilatOS',
+      tag: 'LIVE DEMO · PRODUCT CONCEPT',
+      desc: 'Mobile car-wash operators run on WhatsApp and guesswork. Designed one platform for the whole business: a customer app to book, subscribe and track the washer en route, a rugged field app for technicians with photos and signatures, and an admin console with live dispatch, subscriptions and revenue. Fully clickable demo, no login.',
+      stack: ['React', 'Vite', 'AI-assisted build'],
+      links: [{ label: 'kilatos.runable.site', href: 'https://kilatos.runable.site' }],
+    },
   ],
   clientTrack: [
     {
