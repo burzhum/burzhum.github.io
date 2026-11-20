@@ -32,7 +32,7 @@ Most enterprise projects were built for a government hospital client and are sho
 1. `tests/confidentiality.test.js` scans `src/data/*`, **every tracked text file and all commit messages**.
 2. `scripts/gate-dist.mjs` scans the built `dist/` (CI runs it after the build).
 
-The term list itself is confidential and is **never in the repo**: local runs read the gitignored `.gate-terms` file, CI reads the `GATE_TERMS` Actions secret. Without either, the gate fails closed. Never print, log, copy or commit the list.
+The term list itself is confidential and is **never in the repo**: it lives outside this folder on the owner's laptop (local runs) and in the `GATE_TERMS` Actions secret (CI). Without it the gate fails closed. **Do not search for, open or ask for the list.** If the gate fails, report the file it names and stop; the owner finds the word.
 3. A local `.git/hooks/pre-push` runs that test and blocks the push on failure. Never bypass it (`--no-verify` is forbidden here): CI only fails after the commit is already public.
 
 **Work on this repo in Local mode only, from the owner's laptop clone.** A cloud copy has no pre-push hook, and on a public repo a push to any branch is instantly public. Agents commit; the owner pushes.
