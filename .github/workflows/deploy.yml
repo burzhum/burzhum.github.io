@@ -22,15 +22,11 @@ jobs:
         with: { node-version: 20, cache: npm }
       - run: npm ci
       - run: npm test
+        env: { GATE_TERMS: "${{ secrets.GATE_TERMS }}" }
       - run: npm run build
       - name: Confidentiality scan on built output
-        run: |
-          set -e
-          PATTERNS='[redacted]|[redacted]|[redacted]|10\.37\.|[redacted]|[redacted]|[redacted]|[redacted]|[redacted]'
-          if grep -riE "$PATTERNS" dist/; then
-            echo '::error::Confidential term found in build output'; exit 1
-          fi
-          echo 'clean'
+        run: node scripts/gate-dist.mjs
+        env: { GATE_TERMS: "${{ secrets.GATE_TERMS }}" }
       - uses: actions/upload-pages-artifact@v3
         with: { path: dist }
   deploy:
