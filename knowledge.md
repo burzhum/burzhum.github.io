@@ -29,13 +29,15 @@ Push to `main` → GitHub Actions builds, runs a confidentiality grep on `dist/`
 
 Most enterprise projects were built for a government hospital client and are shown **anonymised**. Two gates enforce it:
 
-1. `tests/confidentiality.test.js` scans `src/data/*` for a forbidden-term list, **and every tracked text file plus all commit messages** (only the gate-definition files are exempt).
-2. `.github/workflows/deploy.yml` greps the built `dist/` for its own list.
+1. `tests/confidentiality.test.js` scans `src/data/*`, **every tracked text file and all commit messages**.
+2. `scripts/gate-dist.mjs` scans the built `dist/` (CI runs it after the build).
+
+The term list itself is confidential and is **never in the repo**: local runs read the gitignored `.gate-terms` file, CI reads the `GATE_TERMS` Actions secret. Without either, the gate fails closed. Never print, log, copy or commit the list.
 3. A local `.git/hooks/pre-push` runs that test and blocks the push on failure. Never bypass it (`--no-verify` is forbidden here): CI only fails after the commit is already public.
 
 **Work on this repo in Local mode only, from the owner's laptop clone.** A cloud copy has no pre-push hook, and on a public repo a push to any branch is instantly public. Agents commit; the owner pushes.
 
-The lists differ on purpose (the CI list omits terms that React's own bundle contains). Do not merge them. Never weaken, skip, or edit either gate. Never add the client's name, its location, contract numbers, internal IP ranges, colleague names or phone numbers anywhere, including commit messages and this file. Enterprise cards describe the client only as a "government hospital".
+Never weaken, skip, or edit either gate. Never add the client's name, its location, contract numbers, internal IP ranges, colleague names or phone numbers anywhere, including commit messages and this file. Enterprise cards describe the client only as a "government hospital".
 
 ## Content rules
 
